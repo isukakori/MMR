@@ -1,7 +1,7 @@
 package com.MMR.utils;
 
 
-import com.xxxx.exceptions.ParamsException;
+import com.MMR.exceptions.ParamsException;
 
 public class AssertUtil {
 
