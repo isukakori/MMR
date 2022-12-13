@@ -16,8 +16,11 @@ public class Charge {
     private Date createDate;
 
     private Date updateDate;
+
     private Date putDate;
+
     private Date outDate;
+
     private Double stopTime;
 
     public Date getPutDate() {
