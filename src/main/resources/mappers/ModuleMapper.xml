@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.MMR.dao.ModuleMapper" >
+  <resultMap id="BaseResultMap" type="com.MMR.vo.Module" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="purview_name" property="purviewName" jdbcType="VARCHAR" />
+    <result column="opt_value" property="optValue" jdbcType="VARCHAR" />
+    <result column="is_value" property="isValue" jdbcType="INTEGER" />
+    <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="update_date" property="updateDate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, purview_name, opt_value, is_value, create_date, update_date
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from p_module
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from p_module
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.MMR.vo.Module" >
+    insert into p_module (id, purview_name, opt_value, 
+      is_value, create_date, update_date
+      )
+    values (#{id,jdbcType=INTEGER}, #{purviewName,jdbcType=VARCHAR}, #{optValue,jdbcType=VARCHAR}, 
+      #{isValue,jdbcType=INTEGER}, #{createDate,jdbcType=TIMESTAMP}, #{updateDate,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.MMR.vo.Module" >
+    insert into p_module
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="purviewName != null" >
+        purview_name,
+      </if>
+      <if test="optValue != null" >
+        opt_value,
+      </if>
+      <if test="isValue != null" >
+        is_value,
+      </if>
+      <if test="createDate != null" >
+        create_date,
+      </if>
+      <if test="updateDate != null" >
+        update_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="purviewName != null" >
+        #{purviewName,jdbcType=VARCHAR},
+      </if>
+      <if test="optValue != null" >
+        #{optValue,jdbcType=VARCHAR},
+      </if>
+      <if test="isValue != null" >
+        #{isValue,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateDate != null" >
+        #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.MMR.vo.Module" >
+    update p_module
+    <set >
+      <if test="purviewName != null" >
+        purview_name = #{purviewName,jdbcType=VARCHAR},
+      </if>
+      <if test="optValue != null" >
+        opt_value = #{optValue,jdbcType=VARCHAR},
+      </if>
+      <if test="isValue != null" >
+        is_value = #{isValue,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null" >
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateDate != null" >
+        update_date = #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.MMR.vo.Module" >
+    update p_module
+    set purview_name = #{purviewName,jdbcType=VARCHAR},
+      opt_value = #{optValue,jdbcType=VARCHAR},
+      is_value = #{isValue,jdbcType=INTEGER},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      update_date = #{updateDate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
