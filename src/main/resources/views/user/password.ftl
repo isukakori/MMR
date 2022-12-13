@@ -48,7 +48,7 @@
         </div>
     </div>
 </div>
-<script type="text/javascript" src="${ctx}/js/stu/password.js"></script>
+<script type="text/javascript" src="${ctx}/public/js/user/password.js"></script>
 
 </body>
 </html>

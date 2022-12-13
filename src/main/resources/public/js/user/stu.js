@@ -33,10 +33,9 @@ layui.use(['table', 'layer'], function () {
             // fixed：固定列
             {type: 'checkbox', fixed: 'center'}
             , {field: 'id', title: '编号', sort: true, fixed: 'left'}
-            , {field: 'userName', title: '用户名称', align: 'center'}
-            , {field: 'trueName', title: '真实姓名', align: 'center'}
-            , {field: 'email', title: '用户邮箱', align: 'center'}
+            , {field: 'username', title: '用户名称', align: 'center'}
             , {field: 'phone', title: '用户号码', align: 'center'}
+            , {field: 'money', title: '充值金额', align:'center'}
             , {field: 'createDate', title: '创建时间', align: 'center'}
             , {field: 'updateDate', title: '修改时间', align: 'center'}
             , {field: 'roleNames', title: '用户角色', align: 'center'}
@@ -59,7 +58,6 @@ layui.use(['table', 'layer'], function () {
             where: { //设定异步数据接口的额外参数，任意设
                 // 通过文本框，设置传递的参数
                 userName: $("[name='userName']").val() // 用户名称
-                , email: $("[name='email']").val() // 邮箱
                 , phone: $("[name='phone']").val() // 手机号
             }
             , page: {

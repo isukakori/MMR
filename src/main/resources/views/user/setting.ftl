@@ -62,6 +62,6 @@
     </div>
 </form>
 
-<script type="text/javascript" src="${ctx}/js/stu/setting.js"></script>
+<script type="text/javascript" src="${ctx}/public/js/user/setting.js"></script>
 </body>
 </html>
