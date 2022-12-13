@@ -55,6 +55,6 @@
     </script>
 </form>
 
-<script type="text/javascript" src="${ctx}/js/stu/stu.js"></script>
+<script type="text/javascript" src="${ctx}/public/js/user/stu.js"></script>
 </body>
 </html>

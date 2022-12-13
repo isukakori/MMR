@@ -2,8 +2,7 @@ package com.MMR.base;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.xxxx.crm.utils.AssertUtil;
-import com.xxxx.crm.vo.CusDevPlan;
+import com.MMR.utils.AssertUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 
