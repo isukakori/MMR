@@ -12,7 +12,7 @@
         </commentGenerator>
         <!--数据库链接地址账号密码-->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://127.0.0.1:3306/crm?serverTimezone=GMT%2B8"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/parkade?serverTimezone=GMT%2B8"
                         userId="root" password="root">
         </jdbcConnection>
 
@@ -23,7 +23,7 @@
 
 
         <!--生成Model类存放位置-->
-        <javaModelGenerator targetPackage="com.xxxx.crm.vo" targetProject="src\main\java">
+        <javaModelGenerator targetPackage="com.MMR.vo" targetProject="src\main\java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
@@ -36,13 +36,13 @@
 
 
         <!--生成Dao类存放位置-->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.xxxx.crm.dao"
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.MMR.dao"
                              targetProject="src\main\java">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
 
-        <table tableName="t_permission" domainObjectName="Permission"
+        <table tableName="p_modu" domainObjectName="Information"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
 
