@@ -1,17 +1,10 @@
 package com.MMR.dao;
 
+import com.MMR.base.BaseMapper;
 import com.MMR.vo.Module;
+import org.springframework.stereotype.Repository;
 
-public interface ModuleMapper {
-    int deleteByPrimaryKey(Integer id);
+@Repository
+public interface ModuleMapper extends BaseMapper<Module,Integer> {
 
-    int insert(Module record);
-
-    int insertSelective(Module record);
-
-    Module selectByPrimaryKey(Integer id);
-
-    int updateByPrimaryKeySelective(Module record);
-
-    int updateByPrimaryKey(Module record);
 }

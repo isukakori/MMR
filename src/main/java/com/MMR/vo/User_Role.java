@@ -7,7 +7,7 @@ public class User_Role {
 
     private Integer userid;
 
-    private Integer poleid;
+    private Integer roleid;
 
     private Date createDate;
 
@@ -29,12 +29,12 @@ public class User_Role {
         this.userid = userid;
     }
 
-    public Integer getPoleid() {
-        return poleid;
+    public Integer getRoleid() {
+        return roleid;
     }
 
-    public void setPoleid(Integer poleid) {
-        this.poleid = poleid;
+    public void setRoleid(Integer roleid) {
+        this.roleid = roleid;
     }
 
     public Date getCreateDate() {
