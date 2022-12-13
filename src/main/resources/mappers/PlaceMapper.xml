@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.MMR.dao.PlaceMapper" >
+  <resultMap id="BaseResultMap" type="com.MMR.vo.Place" >
+    <id column="place_id" property="placeId" jdbcType="INTEGER" />
+    <result column="place_name" property="placeName" jdbcType="VARCHAR" />
+    <result column="is_value" property="isValue" jdbcType="INTEGER" />
+    <result column="place_money" property="placeMoney" jdbcType="INTEGER" />
+    <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="update_date" property="updateDate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    place_id, place_name, is_value, place_money, create_date, update_date
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from p_place
+    where place_id = #{placeId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from p_place
+    where place_id = #{placeId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.MMR.vo.Place" >
+    insert into p_place (place_id, place_name, is_value, 
+      place_money, create_date, update_date
+      )
+    values (#{placeId,jdbcType=INTEGER}, #{placeName,jdbcType=VARCHAR}, #{isValue,jdbcType=INTEGER}, 
+      #{placeMoney,jdbcType=INTEGER}, #{createDate,jdbcType=TIMESTAMP}, #{updateDate,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.MMR.vo.Place" >
+    insert into p_place
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="placeId != null" >
+        place_id,
+      </if>
+      <if test="placeName != null" >
+        place_name,
+      </if>
+      <if test="isValue != null" >
+        is_value,
+      </if>
+      <if test="placeMoney != null" >
+        place_money,
+      </if>
+      <if test="createDate != null" >
+        create_date,
+      </if>
+      <if test="updateDate != null" >
+        update_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="placeId != null" >
+        #{placeId,jdbcType=INTEGER},
+      </if>
+      <if test="placeName != null" >
+        #{placeName,jdbcType=VARCHAR},
+      </if>
+      <if test="isValue != null" >
+        #{isValue,jdbcType=INTEGER},
+      </if>
+      <if test="placeMoney != null" >
+        #{placeMoney,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateDate != null" >
+        #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.MMR.vo.Place" >
+    update p_place
+    <set >
+      <if test="placeName != null" >
+        place_name = #{placeName,jdbcType=VARCHAR},
+      </if>
+      <if test="isValue != null" >
+        is_value = #{isValue,jdbcType=INTEGER},
+      </if>
+      <if test="placeMoney != null" >
+        place_money = #{placeMoney,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null" >
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateDate != null" >
+        update_date = #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where place_id = #{placeId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.MMR.vo.Place" >
+    update p_place
+    set place_name = #{placeName,jdbcType=VARCHAR},
+      is_value = #{isValue,jdbcType=INTEGER},
+      place_money = #{placeMoney,jdbcType=INTEGER},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      update_date = #{updateDate,jdbcType=TIMESTAMP}
+    where place_id = #{placeId,jdbcType=INTEGER}
+  </update>
+</mapper>
