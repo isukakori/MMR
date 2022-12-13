@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.MMR.dao.ViolationMapper">
+  <resultMap id="BaseResultMap" type="com.MMR.vo.Violation">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="car_number" jdbcType="VARCHAR" property="carNumber" />
+    <result column="v_cause" jdbcType="VARCHAR" property="vCause" />
+    <result column="v_money" jdbcType="INTEGER" property="vMoney" />
+    <result column="is_value" jdbcType="INTEGER" property="isValue" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, car_number, v_cause, v_money, is_value, create_date, update_date
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from p_violation
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from p_violation
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.MMR.vo.Violation">
+    insert into p_violation (id, car_number, v_cause, 
+      v_money, is_value, create_date, 
+      update_date)
+    values (#{id,jdbcType=INTEGER}, #{carNumber,jdbcType=VARCHAR}, #{vCause,jdbcType=VARCHAR}, 
+      #{vMoney,jdbcType=INTEGER}, #{isValue,jdbcType=INTEGER}, #{createDate,jdbcType=TIMESTAMP}, 
+      #{updateDate,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.MMR.vo.Violation">
+    insert into p_violation
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="carNumber != null">
+        car_number,
+      </if>
+      <if test="vCause != null">
+        v_cause,
+      </if>
+      <if test="vMoney != null">
+        v_money,
+      </if>
+      <if test="isValue != null">
+        is_value,
+      </if>
+      <if test="createDate != null">
+        create_date,
+      </if>
+      <if test="updateDate != null">
+        update_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="carNumber != null">
+        #{carNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="vCause != null">
+        #{vCause,jdbcType=VARCHAR},
+      </if>
+      <if test="vMoney != null">
+        #{vMoney,jdbcType=INTEGER},
+      </if>
+      <if test="isValue != null">
+        #{isValue,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateDate != null">
+        #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.MMR.vo.Violation">
+    update p_violation
+    <set>
+      <if test="carNumber != null">
+        car_number = #{carNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="vCause != null">
+        v_cause = #{vCause,jdbcType=VARCHAR},
+      </if>
+      <if test="vMoney != null">
+        v_money = #{vMoney,jdbcType=INTEGER},
+      </if>
+      <if test="isValue != null">
+        is_value = #{isValue,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null">
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateDate != null">
+        update_date = #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.MMR.vo.Violation">
+    update p_violation
+    set car_number = #{carNumber,jdbcType=VARCHAR},
+      v_cause = #{vCause,jdbcType=VARCHAR},
+      v_money = #{vMoney,jdbcType=INTEGER},
+      is_value = #{isValue,jdbcType=INTEGER},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      update_date = #{updateDate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.MMR.vo.Violation">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="car_number" jdbcType="VARCHAR" property="carNumber" />
+    <result column="v_cause" jdbcType="VARCHAR" property="vCause" />
+    <result column="v_money" jdbcType="INTEGER" property="vMoney" />
+    <result column="is_value" jdbcType="INTEGER" property="isValue" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, car_number, v_cause, v_money, is_value, create_date, update_date
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from p_violation
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from p_violation
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.MMR.vo.Violation">
+    insert into p_violation (id, car_number, v_cause, 
+      v_money, is_value, create_date, 
+      update_date)
+    values (#{id,jdbcType=INTEGER}, #{carNumber,jdbcType=VARCHAR}, #{vCause,jdbcType=VARCHAR}, 
+      #{vMoney,jdbcType=INTEGER}, #{isValue,jdbcType=INTEGER}, #{createDate,jdbcType=TIMESTAMP}, 
+      #{updateDate,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.MMR.vo.Violation">
+    insert into p_violation
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="carNumber != null">
+        car_number,
+      </if>
+      <if test="vCause != null">
+        v_cause,
+      </if>
+      <if test="vMoney != null">
+        v_money,
+      </if>
+      <if test="isValue != null">
+        is_value,
+      </if>
+      <if test="createDate != null">
+        create_date,
+      </if>
+      <if test="updateDate != null">
+        update_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="carNumber != null">
+        #{carNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="vCause != null">
+        #{vCause,jdbcType=VARCHAR},
+      </if>
+      <if test="vMoney != null">
+        #{vMoney,jdbcType=INTEGER},
+      </if>
+      <if test="isValue != null">
+        #{isValue,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateDate != null">
+        #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.MMR.vo.Violation">
+    update p_violation
+    <set>
+      <if test="carNumber != null">
+        car_number = #{carNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="vCause != null">
+        v_cause = #{vCause,jdbcType=VARCHAR},
+      </if>
+      <if test="vMoney != null">
+        v_money = #{vMoney,jdbcType=INTEGER},
+      </if>
+      <if test="isValue != null">
+        is_value = #{isValue,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null">
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateDate != null">
+        update_date = #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.MMR.vo.Violation">
+    update p_violation
+    set car_number = #{carNumber,jdbcType=VARCHAR},
+      v_cause = #{vCause,jdbcType=VARCHAR},
+      v_money = #{vMoney,jdbcType=INTEGER},
+      is_value = #{isValue,jdbcType=INTEGER},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      update_date = #{updateDate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.xxxx.MMR.vo.Violation">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="car_number" jdbcType="VARCHAR" property="carNumber" />
+    <result column="v_cause" jdbcType="VARCHAR" property="vCause" />
+    <result column="v_money" jdbcType="INTEGER" property="vMoney" />
+    <result column="is_value" jdbcType="INTEGER" property="isValue" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, car_number, v_cause, v_money, is_value, create_date, update_date
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from p_violation
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from p_violation
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.xxxx.MMR.vo.Violation">
+    insert into p_violation (id, car_number, v_cause, 
+      v_money, is_value, create_date, 
+      update_date)
+    values (#{id,jdbcType=INTEGER}, #{carNumber,jdbcType=VARCHAR}, #{vCause,jdbcType=VARCHAR}, 
+      #{vMoney,jdbcType=INTEGER}, #{isValue,jdbcType=INTEGER}, #{createDate,jdbcType=TIMESTAMP}, 
+      #{updateDate,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xxxx.MMR.vo.Violation">
+    insert into p_violation
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="carNumber != null">
+        car_number,
+      </if>
+      <if test="vCause != null">
+        v_cause,
+      </if>
+      <if test="vMoney != null">
+        v_money,
+      </if>
+      <if test="isValue != null">
+        is_value,
+      </if>
+      <if test="createDate != null">
+        create_date,
+      </if>
+      <if test="updateDate != null">
+        update_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="carNumber != null">
+        #{carNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="vCause != null">
+        #{vCause,jdbcType=VARCHAR},
+      </if>
+      <if test="vMoney != null">
+        #{vMoney,jdbcType=INTEGER},
+      </if>
+      <if test="isValue != null">
+        #{isValue,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateDate != null">
+        #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xxxx.MMR.vo.Violation">
+    update p_violation
+    <set>
+      <if test="carNumber != null">
+        car_number = #{carNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="vCause != null">
+        v_cause = #{vCause,jdbcType=VARCHAR},
+      </if>
+      <if test="vMoney != null">
+        v_money = #{vMoney,jdbcType=INTEGER},
+      </if>
+      <if test="isValue != null">
+        is_value = #{isValue,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null">
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateDate != null">
+        update_date = #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xxxx.MMR.vo.Violation">
+    update p_violation
+    set car_number = #{carNumber,jdbcType=VARCHAR},
+      v_cause = #{vCause,jdbcType=VARCHAR},
+      v_money = #{vMoney,jdbcType=INTEGER},
+      is_value = #{isValue,jdbcType=INTEGER},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      update_date = #{updateDate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
