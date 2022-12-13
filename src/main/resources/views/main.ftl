@@ -73,7 +73,7 @@
                         <a href="javascript:;" class="layui-menu-tips"><i class="fa fa-flag"></i><span
                                     class="layui-left-nav">资讯信息模块</span> <span class="layui-nav-more"></span></a>
                         <dl class="layui-nav-child">
-                            <#if permissions?seq_contains("101") >
+                            <#if permissions?seq_contains("1010") >
                                 <dd>
                                     <a href="javascript:;" class="layui-menu-tips" data-type="tabAdd"
                                        data-tab-mpi="m-p-i-3"
@@ -82,7 +82,7 @@
                                 </dd>
                             </#if>
 
-                            <#if permissions?seq_contains("102") >
+                            <#if permissions?seq_contains("1020") >
                                 <dd>
                                     <a href="javascript:;" class="layui-menu-tips" data-type="tabAdd"
                                        data-tab-mpi="m-p-i-4"
@@ -101,7 +101,7 @@
                         <a href="javascript:;" class="layui-menu-tips"><i class="fa fa-desktop"></i><span
                                     class="layui-left-nav"> 车位管理模块</span> <span class="layui-nav-more"></span></a>
                         <dl class="layui-nav-child">
-                            <#if permissions?seq_contains("201") >
+                            <#if permissions?seq_contains("2010") >
                                 <dd>
                                     <a href="javascript:;" class="layui-menu-tips" data-type="tabAdd"
                                        data-tab-mpi="m-p-i-5"
@@ -110,7 +110,7 @@
                                 </dd>
                             </#if>
 
-                            <#if permissions?seq_contains("202") >
+                            <#if permissions?seq_contains("2020") >
                                 <dd>
                                     <a href="javascript:;" class="layui-menu-tips" data-type="tabAdd"
                                        data-tab-mpi="m-p-i-6"
@@ -129,7 +129,7 @@
                         <a href="javascript:;" class="layui-menu-tips"><i class="fa fa-street-view"></i><span
                                     class="layui-left-nav"> </span> 收费信息<span class="layui-nav-more"></span></a>
                         <dl class="layui-nav-child">
-                            <#if permissions?seq_contains("301") >
+                            <#if permissions?seq_contains("3010") >
                                 <dd>
                                     <a href="javascript:;" class="layui-menu-tips" data-type="tabAdd"
                                        data-tab-mpi="m-p-i-2"
@@ -140,7 +140,7 @@
                                 </dd>
                             </#if>
 
-                            <#--<#if permissions?seq_contains("302") >
+                            <<#if permissions?seq_contains("3020") >
                                 <dd>
                                     <a href="javascript:;" class="layui-menu-tips" data-type="tabAdd"
                                        data-tab-mpi="m-p-i-1"
@@ -149,19 +149,19 @@
                                         <span class="layui-left-nav">收费管理</span>
                                     </a>
                                 </dd>
-                            </#if>-->
+                            </#if>
                         </dl>
                     </#if>
                     </li>
                 </#if>
 
                 <#if permissions??>
-                    <#if permissions?seq_contains("30") >
+                    <#if permissions?seq_contains("40") >
                         <li class="layui-nav-item">
                         <a href="javascript:;" class="layui-menu-tips"><i class="fa fa-street-view"></i><span
                                     class="layui-left-nav"> </span> 违规车辆模块<span class="layui-nav-more"></span></a>
                         <dl class="layui-nav-child">
-                            <#if permissions?seq_contains("301") >
+                            <#if permissions?seq_contains("4010") >
                                 <dd>
                                     <a href="javascript:;" class="layui-menu-tips" data-type="tabAdd"
                                        data-tab-mpi="m-p-i-2"
@@ -172,7 +172,7 @@
                                 </dd>
                             </#if>
 
-                            <#if permissions?seq_contains("302") >
+                            <#if permissions?seq_contains("4020") >
                                 <dd>
                                     <a href="javascript:;" class="layui-menu-tips" data-type="tabAdd"
                                        data-tab-mpi="m-p-i-1"
@@ -188,13 +188,13 @@
                 </#if>
 
                 <#if permissions??>
-                    <#if permissions?seq_contains("4") >
+                    <#if permissions?seq_contains("50") >
                         <li class="layui-nav-item">
                         <a href="javascript:;" class="layui-menu-tips"><i class="fa fa-gears"></i><span
                                     class="layui-left-nav"> 系统设置</span> <span class="layui-nav-more"></span></a>
 
                         <dl class="layui-nav-child">
-                            <#if permissions?seq_contains("41") >
+                            <#if permissions?seq_contains("5010") >
                                 <dd>
                                     <a href="javascript:;" class="layui-menu-tips" data-type="tabAdd"
                                        data-tab-mpi="m-p-i-10"
@@ -202,14 +202,14 @@
                                                 class="layui-left-nav"> 图表管理</span></a>
                                 </dd>
                             </#if>
-                            <#if permissions?seq_contains("42") >
+                            <#if permissions?seq_contains("5020") >
                                 <dd>
                                     <a href="javascript:;" class="layui-menu-tips" data-type="tabAdd"
                                        data-tab-mpi="m-p-i-11" data-tab="user/index" target="_self"><i
                                                 class="fa fa-user"></i><span class="layui-left-nav"> 用户管理</span></a>
                                 </dd>
                             </#if>
-                            <#if permissions?seq_contains("43") >
+                            <#if permissions?seq_contains("5030") >
                                 <dd class="">
                                     <a href="javascript:;" class="layui-menu-tips" data-type="tabAdd"
                                        data-tab-mpi="m-p-i-12" data-tab="role/index" target="_self"><i
@@ -217,7 +217,7 @@
                                                 class="layui-left-nav"> 角色管理</span></a>
                                 </dd>
                             </#if>
-                            <#if permissions?seq_contains("44") >
+                            <#if permissions?seq_contains("5040") >
                                 <dd class="">
                                     <a href="javascript:;" class="layui-menu-tips" data-type="tabAdd"
                                        data-tab-mpi="m-p-i-13" data-tab="module/index" target="_self"><i
