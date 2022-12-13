@@ -16,6 +16,33 @@ public class Charge {
     private Date createDate;
 
     private Date updateDate;
+    private Date putDate;
+    private Date outDate;
+    private Double stopTime;
+
+    public Date getPutDate() {
+        return putDate;
+    }
+
+    public void setPutDate(Date putDate) {
+        this.putDate = putDate;
+    }
+
+    public Date getOutDate() {
+        return outDate;
+    }
+
+    public void setOutDate(Date outDate) {
+        this.outDate = outDate;
+    }
+
+    public Double getStopTime() {
+        return stopTime;
+    }
+
+    public void setStopTime(Double stopTime) {
+        this.stopTime = stopTime;
+    }
 
     public Integer getId() {
         return id;
